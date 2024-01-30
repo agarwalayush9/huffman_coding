@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="agarwalayush9">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <title>File Compressor</title>
+    <link rel="stylesheet" href="../static/index.css">
+ 
+</head>
+
+<body onload="load()">
+    <div id="loading"></div>
+    <div id="particles-js">
+        <div id="pos">
+            <header id="header">
+                <h1> File Compressor ~ Huffman Coding </h1>
+            </header>
+            <div id="infix">
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <br/>
+                <span> input File:</span>&nbsp;
+                <input type="file" id="input" name="file" class="infi">
+                <br>
+                <input id="pre1" type="submit" value="Upload File">
+                </form>
+                
+            </div>
+            <!-- <div id="choose">
+                <span id="pre" onclick="pre()" on>Compress To Binary</span>
+                <span id="post" onclick="post()">Decompress File</span>
+            </div><br> -->
+
+            <div id="output">
+                {% if error_message %}
+                <span >{{ error_message }}</span>
+            {% endif %}
+            {% if original_size %}
+            <span ><b>Original file size:</b> {{ original_size }} bytes</span><br>
+        {% endif %}
+              {% if compressed_path %}
+              <span><b>Compressed file path:</b> {{ compressed_path }} ({{ compressed_size }} bytes)</span>
+              <br>
+          {% endif %}
+          {% if decompressed_path %}
+              <span><b>Decompressed file path:</b> {{ decompressed_path }} ({{ decompressed_size }} bytes)</span>
+          {% endif %}
+            </div>
+        </div>
+        
+    </div>
+    <footer>
+        <a href="https://www.linkedin.com/in/ayush-agarwal52" target="_blank"><img src="../static/img/linkedinIcon.png"
+                alt="linkedin" style="border-radius: 5px;" class="icon"></a>
+        <a href="https://github.com/agarwalayush9" target="_blank"><img src="../static/img/GitHub-Mark-Light-64px.png"
+                alt="Github" id="git" class="icon" style="margin-left: 30px;"></a><br>
+        <a class="a" href="#">Created By Ayush Agarwal | &copy; 2023 </a>
+    </footer>
+    
+    <script>
+        let body = document.body;
+        body.style.overflow = 'hidden';
+        var loaded = document.getElementById('loading');
+        function load() {
+            loaded.style.display = 'none';
+            body.style.overflow = 'visible';
+        }
+    </script>
+    <script type="text/javascript" src="../static/particles.js"></script>
+    <script src="../static/app.js" type="text/javascript"></script>
+    <!-- <script src="../static/index.js"></script> -->
+    <!--   -->
+</body>
+
+</html>
